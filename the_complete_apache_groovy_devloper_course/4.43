@@ -1,0 +1,33 @@
+// in java
+//import java.util.regex.*;
+//Pattern pattern = Pattern.compile("a\\\\b")
+//println pattern
+//println pattern.class
+
+// in groovy
+
+//String pattern = $/a\b/$
+//String url = $/http://www.felixlive.com/myaccount/script.php/$
+
+//def pattern = ~/a\b/
+//pattern.class
+// find | match
+
+//def text = "bicycling to work saves gas"
+//def pattern = ~/work saves/
+//def finder = text =~ pattern
+//def matcher = text ==~ pattern
+//println finder.size()
+//println matcher
+
+//def text = "work saves lives"
+//def pattern = ~/work saves/
+//def matcher = text ==~ pattern
+//println matcher
+
+//if (matcher) {println "it sure does"}
+
+def text = "bicycling to work saves gas"
+def pattern = ~/work saves/
+//println text.class
+text = text.replaceFirst(pattern, "the store for")

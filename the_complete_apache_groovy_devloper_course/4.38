@@ -1,0 +1,31 @@
+// explicit casting
+def my_float = (float) 1.0
+my_float.class
+
+//imlicit coercion
+
+// if there's a double, result will be double. 
+// if there's two floats, results will be double
+
+// if either is a BigDecimal then result wil be big decimal
+
+println 5.0d - 4.1d
+println 5-4.1
+
+println 1/2
+(1/2).class
+
+println 2.7.toInteger()
+//println 'f'.toInteger()
+
+20.times {
+    print '-'
+}
+
+1.upto(10) { num ->
+    println num
+    }
+    
+ 0.step(1,0.1) { num ->
+ println num
+ }

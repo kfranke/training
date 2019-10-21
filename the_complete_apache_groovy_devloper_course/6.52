@@ -1,0 +1,27 @@
+def c = {}
+//println c.class.name
+//println c instanceof Closure
+
+def sayHello = { name -> 
+ //println "hello $name"
+}
+
+//sayHello("bob")
+
+List nums = [1,4,5,7,8,9,10]
+nums.each{ num -> 
+   //println num
+}
+
+def timesTen(num,closure){
+    closure(num * 10)
+}
+
+
+//timesTen(10, {println it})
+//timesTen(2, {println it})
+
+//10.times{println it}
+import java.util.Random
+Random rand = new Random()
+3.times{println rand.nextInt()}

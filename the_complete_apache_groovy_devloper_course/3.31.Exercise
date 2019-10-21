@@ -1,0 +1,9 @@
+import groovy.transform.Sortable
+
+@Sortable
+class Device {
+
+    String esn
+    Integer id
+    Date created_on
+}

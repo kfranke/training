@@ -1,0 +1,44 @@
+// implicit parameter
+def foo = {
+    println it
+}
+
+foo('dan')
+
+// if we didnt want any params 
+def noparams = { -> 
+println "no params"
+}
+
+noparams() //should be ok
+//noparams(1) //should fail
+
+def sayHello = { String first, String last ->
+    println "hello $first $last"
+}
+sayHello('joe', 'brown')
+
+//how to do default value
+
+def greet = {String name, String greeting = "Howdy" -> 
+println "$greeting, $name"
+}
+
+greet("joe", "you're a butthead")
+greet("bob")
+
+// how to do var-arg which accepts 1 to many arguments/params
+def concat = {String... args ->
+    args.join('')
+    }
+    
+println concat("joe","bob","stacy","cat")
+
+def myMethod(Closure c) {
+    println "..."
+    println c.maximumNumberOfParameters
+    println c.parameterTypes
+}
+
+def myClosure = { int x, int y -> x + y }
+myMethod(myClosure)

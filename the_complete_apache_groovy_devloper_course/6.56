@@ -1,0 +1,25 @@
+class MyScope {
+    def outerClosure = {
+        println this.class.name
+        println owner.class.name
+        println delegate.class.name
+        def childClosure = {
+            println this.class.name
+            println owner.class.name
+            println delegate.class.name
+        }
+        childClosure()
+    }
+}
+//def demo = new MyScope()
+//demo.outerClosure()
+
+def writter = {
+    append 'joe'
+    append 'goes fast down the road'
+}
+def append(String s) {println "appened() called with $s"}
+StringBuffer sb = new StringBuffer()
+writter.resolveStrategy = Closure.DELEGATE_FIRST
+writter.delegate = sb //setting the delegate explicitely
+writter()

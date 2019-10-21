@@ -1,0 +1,40 @@
+class Account{
+
+    BigDecimal balance = 0.0
+    
+    def deposit( BigDecimal amount ){
+        try{
+            if( amount < 0 ){
+                throw new Exception("Deposit not greater than 0")
+            }
+            balance += amount
+            println "Deposited $amount"
+            /*
+            switch( amount ){
+                case amount < 0: 
+                    throw new Exception("Deposit Exception")
+                    break
+                case amount >= 0:
+                    balance += amount
+                    println "Deposited $amount"
+                    break
+            }
+            */
+            
+        }catch(Exception e){
+            println e.message
+        }
+
+    }
+    
+    def deposits( List amounts ){
+        for( a in amounts ){deposit(a)}
+    }
+}
+
+Account checking = new Account()
+checking.deposit(10)
+checking.deposit(-1)
+checking.deposit(5)
+checking.balance
+checking.deposits( [5,1,4,8] )

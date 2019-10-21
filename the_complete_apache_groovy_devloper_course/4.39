@@ -1,0 +1,23 @@
+class Account {
+
+    BigDecimal balance
+    
+    Account plus(Account other) {
+        new Account(balance: this.balance + other.balance)
+    }
+    
+    String toString() {
+        balance
+    }
+}
+
+Account savings = new Account(balance:100.00)
+Account checking = new Account(balance:500.00)
+
+println savings+checking
+//def s1 = "hello"
+//def s2 = "world"
+
+//println s1+s2
+//println s1.plus(s2)
+

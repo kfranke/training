@@ -1,0 +1,46 @@
+def myMethod(Closure c) {
+    c()
+}
+def test = {println "whatever" }
+//myMethod(test)
+
+//def myClosure = { int x, int y -> x + y }
+//myMethod(myClosure)
+
+//List names = ["bob","sue","sally","tom","dick"]
+//names.each{println it}
+
+Map states = [newyork:"ny",florida:"fl",georgia:"ga",montana:"mt",virginia:"va"]
+//states.each{name,abbr -> println "$name - $abbr"}
+
+def insult = {name,insult -> println "hey $name, $insult"}
+//insult("joe","you're a butthead")
+def insultJoe = insult.curry("joe")
+//insultJoe("your feet look like tiny dicks")
+
+//find gets first
+
+List locations = [
+    [state:'arizona',city:'tucson'],
+    [state:'alabama',city:'poodunk'],
+    [state:'florida',city:'tampa'],
+    [state:'montana',city:'bozeman'],
+    [state:'virginia',city:'stafford'],
+    [state:'virginia',city:'fairfax'],
+    [state:'montana',city:'billings'],
+    [state:'montana',city:'red lodge'],
+    [state:'tennessee',city:'cleveland'],
+]
+//println locations.find{it.state == "arizona"}
+//println locations.find{it.state.startsWith('a')}
+//println locations.findAll{it.state.startsWith('a')}
+//println locations.any{it.city == 'tucson'} //t
+//println locations.any{it.city == 'fredericksburg'} //f
+//println locations.every{it.city=='tucson'} //f
+//println locations.every{it.state.size()>5} //t
+
+def locationsByState = locations.groupBy {it.state}
+//println locationsByState
+
+def montanaLocations = locationsByState['montana']
+println montanaLocations

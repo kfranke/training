@@ -1,0 +1,13 @@
+Dear $first_name $last_name,
+You have used up at total of ${ credits.size() } of your social credits.
+
+Your recent usage
+
+<% credits.each { credit ->
+    println "\t> $credit.name - $credit.desc"
+}
+%>
+
+Thank you for your compliance; it will be rewarded.
+Totally not Hydra
+www.nothydra.com

@@ -1,0 +1,26 @@
+def log = {String type, Date createdOn, String msg ->
+    println "$createdOn [$type] - $msg"
+}
+
+log("DEBUG",new Date(), "The thing is broke")
+
+//use a curry can reduce repetiveness
+
+def debugLog = log.curry("DEBUG") // fills in all now just needs two
+
+debugLog(new Date(), "this is a debugging msg")
+debugLog(new Date(), "this is another message ok")
+
+def todayDebugLog = log.curry("DEBUG", new Date())
+todayDebugLog("This is another to log with only 1 needed")
+
+def todaysDebugLog = debugLog.curry(new Date()) //curry a curry
+todaysDebugLog("this is final message")
+
+//right curry.. from the right.. 
+def crazyPersonLog = log.rcurry("im super cray cray")
+crazyPersonLog("DEBUG",new Date())
+
+//index curry.. this replaces the indexed item
+def typeMsgLog = log.ncurry(1,new Date())
+typeMsgLog("NOTICE","this log has been run")

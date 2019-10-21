@@ -1,0 +1,26 @@
+class Person {
+
+    //fields or properties
+    //Type and name
+    //okay to not set the modifier private | protected | public
+    String first_name, last_name //okay to declare > 1 if same type
+    def dob //okay to not type it 
+    protected String f1,f2,f3
+    private Date created_on = new Date()
+    static welcome_msg = 'Hello'
+    public static final String WELCOME_MSG = 'Hello'//constant
+    
+    //local var
+    def foo(){
+        String msg = 'Hello' //this is local to this method alone
+        String first_name = 'joe' //will no colide bc it's local to foo()
+        println "$msg $first_name"
+    }
+
+}
+
+//println Person.welcome_msg // with static variables you can access w/o declaring new
+//println Person.WELCOME_MSG
+
+def person = new Person()
+println person.foo()

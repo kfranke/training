@@ -1,0 +1,24 @@
+import groovy.transform.*
+
+@ToString
+@Sortable()
+class Person {
+    
+    String first
+    String last
+    Integer id
+
+}
+
+def p1 = new Person(first:"Joe", last:"vega", id: 7)
+def p2 = new Person(first:"Dan", last:"vega", id: 3)
+def p3 = new Person(first:"Adam", last:"vega", id: 1)
+
+def people = [p1,p2,p3]
+println people
+
+def sorted = people.sort(false)
+println sorted
+
+def sortedById = people.toSorted { a, b -> a.id <=> b.id }
+println sortedById

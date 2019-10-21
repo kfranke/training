@@ -1,0 +1,14 @@
+{
+    "item": {
+        "isbn": "978-1937785307",
+        "title": "Programming Groovy 2: Dynamic Productivity for the Java Developer",
+        "author": {
+            "name": "Venkat Subramaniam",
+            "twitter": "@handle"
+        },
+        "related": [
+            "some related book",
+            "another book"
+        ]
+    }
+}

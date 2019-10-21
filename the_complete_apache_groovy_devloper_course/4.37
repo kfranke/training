@@ -1,0 +1,9 @@
+//data types
+
+//jave staticlly types means all var have to be declared first
+int x = 10
+byte b = 200
+
+println b
+
+println(Short.MAX_VALUE)

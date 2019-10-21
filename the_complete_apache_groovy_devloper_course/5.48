@@ -1,0 +1,37 @@
+//Range myRange = 1..100
+//myRange.class
+//println myRange.size()
+//println myRange.first()
+//println myRange.last()
+//println myRange.getFrom()
+//println myRange.getTo()
+//Date wkstart = "Sunday"
+//Date wkend = "Saturday"
+
+//Range wkDays = "Sunday".."Saturday"
+enum days {SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY}
+def daysRange = days.SUNDAY..days.SATURDAY
+println daysRange.contains(days.WEDNESDAY)
+println daysRange.from
+println daysRange.to
+
+
+def daysList = ["Sun","Mon","Tue","Wen","Thu","Fri","Sat"]
+//println daysList.size()
+//println daysList
+daysList.remove(6) //also .pop()
+//println daysList
+daysList.add("Sat") //also left shift <<
+//println daysList
+//println daysList[3]
+
+def daysMap = [ 1:"Sunday",
+                2:"Monday",
+                3:"Tuesday",
+                4:"Wednesday",
+                5:"Thursday",
+                6:"Friday",
+                7:"Saturday" ]
+//println daysMap
+//println daysMap.getClass().getName() 
+println daysMap.values()

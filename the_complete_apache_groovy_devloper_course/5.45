@@ -1,0 +1,26 @@
+for(int x = 1; x<= 10; ++x){
+//println x
+}
+for(int y = 10; y>= 1; --y){
+//println y
+}
+
+def letters = ['a','b','c','d']
+for(int i = 0; i<letters.size(); ++i){
+//println letters[i]
+}
+
+Range r = 1..<10
+r.class
+println r //1..10
+println r.from
+println r.to
+
+assert (0..10).contains(10)
+//assert (0..10).contains('a')
+assert ("a".."z").contains("x")
+
+Date today = new Date()
+Date one_wk_away = today + 7
+Range days = today..one_wk_away
+println days

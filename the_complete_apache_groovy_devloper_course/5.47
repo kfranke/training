@@ -1,0 +1,24 @@
+def map = [:]
+//println map
+//println map.getClass.getName()
+
+def person = [first:"kevin",last:"brown",email:"kbrown@email.com",id:50,favColor:"blue"]
+println person.first
+//println person.getClass.getName() // doesnt work like example does
+person.twitter = "@kbrown"
+//println person
+
+def emailKey = "email"
+def twitter = [username:"zirkewled",(emailKey):"kbrown@email.com",id:10]
+//println twitter
+//twitter.sort()
+//println twitter
+
+for(entry in person){
+//println entry
+}
+for(key in person.keySet() ){
+//println "$key:${person[key]}"
+}
+
+// each | eachWithIndex but those are closures so not covering in this lesson? 

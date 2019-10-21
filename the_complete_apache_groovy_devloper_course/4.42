@@ -1,0 +1,38 @@
+//java
+char c = 'c'
+
+String str = "this is a string"
+
+String str2 = 'this is a string'
+str2.class
+
+//groovy
+
+def c2 = 'c'
+c2.class
+
+def str3 = "string of words"
+str3.class
+
+//groovy strings
+//string interpolation
+
+String name = "joe"
+String msg = "hey there" + name
+String msg2 = "hey there $name"
+String msg3 = 'hey there $name'
+String msg4 = "hey there ${name} ${5+5}" //wonder dif w or w/o ${}
+
+//multiline string
+def bigstring = '''
+this is
+part of
+multi
+line message
+'''
+
+//dollar slashy
+def folder = "c:/folder/path"
+def path = $/c:\this\back\slash/$
+
+// dollar slashy should be $/ anything /$

@@ -1,0 +1,40 @@
+// each and each with index
+
+List favNums = [1,13,51,31,91,61]
+for(num in favNums){
+//println num
+}
+//list them all out with closure
+//favNums.each {println it}
+
+//old school list with index
+for(i=0; i<favNums.size();i++){
+//println "$i:${favNums[i]}"
+}
+//more better way
+favNums.eachWithIndex {num, idx -> 
+//println "$idx:$num"
+}
+
+
+List days = ["sunday",
+             "monday",
+             "tuesday",
+             "wednesday",
+             "thursday",
+             "friday",
+             "saturday"]
+List weekend = days.findAll { it.startsWith("s") }
+//println weekend
+
+List nums = [1,5,6,8,99,43,89,22,44,958]
+List numsTimesTen = []
+nums.each { num -> 
+    numsTimesTen << num * 10
+    }
+//println nums
+//println numsTimesTen
+
+//more effecient
+List newTimesTen = nums.collect { num -> num * 10 }
+println newTimesTen

@@ -1,0 +1,64 @@
+@groovy.transform.Canonical
+class Tweet {
+
+    String  post
+    String  username
+    Date    timestamp = new Date()
+
+    private List    favorites = [] //when people heart a tweet
+    private List    retweets  = []
+    private List    mentions  = [] //when begins with @<username>
+    private List    hashtags  = [] //begins with #<text>
+    
+    void favorite(String username) {
+        favorites << username
+    }
+    List getFavorites() {
+        return favorites
+    }
+    void retweet(String username) {
+        retweets << username
+    }
+    List getRetweets() {
+        return retweets
+    }
+    // seems like better would be to @Override a setter?
+    // though i'm not exactly sure how  to do this
+    // when instantinated, scrape the post for mentions and set them in
+    // the mentions list
+     
+    //@Override
+    void setMentions() {
+        String pattern = /\B@[a-zA-Z0-9_-]+/
+        mentions << post.findAll(pattern)
+    }
+    List getMentions() {
+        return mentions
+    }
+    /*
+    List getMentions() {
+        String pattern = /\B@[a-zA-Z0-9_-]+/ //word boundry litteral @ any text upper or lower with numbers and underscore and hyphins
+        post.findAll(pattern)
+    }
+    */
+    List getHashtags() {
+        String pattern = /(?:\s|\A)[##]+([A-Za-z0-9-_]+)/
+        post.findAll(pattern)
+    }
+    
+}
+
+Tweet tweet = new Tweet()
+tweet.post = "Im learning groovy @therealdonaldtrump #education #programming"
+tweet.username = "@airkewled"
+tweet.favorite("@therealdanvega")
+tweet.favorite("@bozemantofushop")
+tweet.retweet("@bozemantofushop")
+
+tweet.setMentions()
+println tweet.getFavorites()
+println tweet.getRetweets()
+println tweet.getMentions()
+//println tweet.getHashtags()
+//println tweet
+

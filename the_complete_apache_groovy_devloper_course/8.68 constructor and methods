@@ -1,0 +1,48 @@
+@groovy.transform.ToString
+class Person {
+
+    String first, last
+    //constructor roll your own
+    Person(String full_name) {
+        List parts = full_name.split(' ')
+        first = parts[0]
+        last = parts[1]
+    }
+    
+    //methods
+    //java
+    public void foo(String a, String b){
+        //do stuff
+    }
+    //groovy
+    String getFullName(){
+        "$first $last"
+    }
+    //groovy doesnt matter if you type
+    def bar(){
+    
+    }
+    
+    static String doGoodWork(){
+        println "doing good work bro"
+    }
+    //methods with args
+    def someMethod(nums){ //can assign type but dont have to
+        
+    }
+    def methodWithDefault(nums = [1,2,3], Boolean isSet = false){
+    
+    }
+    def concat(String...args) { //accept many and unknown quantity of arguments
+        println args.length
+    }
+    
+}
+
+//Person p = new Person(first: 'joe',last: 'brown')
+//Person p = new Person("joe brown")
+//println p
+
+//println Person.doGoodWork()
+Person p = new Person("joe brown")
+p.concat("a","b","c")

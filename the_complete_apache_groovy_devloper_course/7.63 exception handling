@@ -1,0 +1,32 @@
+//exceptions
+/*
+//java
+public void foo() throws Exception{
+    throw new Exception
+}
+*/
+
+//groovy
+def foo() {
+    //do things
+    throw new Exception("foo excecption")
+}
+
+
+List log = []
+try {
+    foo()
+} catch( Exception e ) {
+    log << e.message
+} finally{
+    log << 'finally'
+}
+println log
+
+//java 7 multi catch syntax for catching more than one type
+try {
+
+} catch (FileNotFoundException | NullPointerException e) {
+    println e.class.name
+    println e.message
+}

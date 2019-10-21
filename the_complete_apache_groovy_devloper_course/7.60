@@ -1,0 +1,25 @@
+//if(true) {println "true"}
+
+//boolean
+assert true
+assert !false
+//matcher
+assert ('a' =~ /a/)
+assert !('a' =~ /b/)
+//collection
+assert [1]
+assert ![]
+//map
+assert [1:'one']
+assert ![:]
+//string
+assert 'a'
+assert !''
+//num
+assert 1
+assert 3.5
+assert !0
+//none of above
+assert new Object()
+assert !null 
+
